@@ -26,7 +26,7 @@ namespace RumblePhotoGallery.Services
 
             string imageSearchUrl = $"https://{FLICKR_API_BASE_URL}?method={FLICKR_SEARCH_METHOD}&api_key={FLICKR_API_KEY}&per_page={resultsPerPage}&page={pageNumber}&tags={keyword}&format={FLICKR_RESPONSE_FORMAT}";
 
-            string responseString = string.Empty;
+            string responseString;
 
             using (HttpClient httpClient = GetHttpClient())
             {
