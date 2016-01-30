@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage x:Class="RumblePhotoGallery.Views.PhotoGalleryPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:RumblePhotoGallery.Converters;assembly=RumblePhotoGallery">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:NullToInverseBooleanConverter x:Key="NullToInverseBooleanConverter" />
+
+    </ResourceDictionary>
+
+  </ContentPage.Resources>
+  <ContentPage.Content>
+
+    <Grid>
+
+      <ActivityIndicator IsRunning="{Binding Photos, Converter={StaticResource NullToInverseBooleanConverter}}"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center" />
+
+      <ListView ItemSelected="ListView_OnItemSelected"
+                CachingStrategy="RecycleElement"
+                RowHeight="250"
+                ItemsSource="{Binding Photos}">
+
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Image Aspect="AspectFit"
+                     Source="{Binding }" />
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+    </Grid>
+
+
+  </ContentPage.Content>
+
+</ContentPage>
