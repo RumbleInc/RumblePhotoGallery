@@ -27,5 +27,5 @@ The PCL project in the solution consists of the following classes:
 2. At the moment, the search for photos in Flickr is done by a keyword which is hard coded in the view model. Add a textbox and a search button to the UI, which will allow the users to search for photos using whatever keyword they want.
 
 3. When scrolling the list of photos, you’ll notice that there is no indication to the user that images are being loaded, but instead, blank cells are displayed. Your task is to modify the image renderer behavior such that it will display a placeholder image, loaded from the device (rather than the network), until the real image is available for display. You can use the image "placeholder.png" found in the resources folder of the Android project. 
-**Note**: do not use any additional image controls. Instead, create a custom Image Renderer.
+**Note**: do not use any additional image controls. Instead, create a [custom Image Renderer](https://developer.xamarin.com/guides/xamarin-forms/custom-renderer/).
 
